@@ -1,0 +1,752 @@
+/*CUSTOM PROPERTIES*/
+:root {
+    /*PALETA DE COLORES*/
+    --primario: #3B3B3B;
+    --secundario: #4f4f4f;
+    --blanco: #f6f6f6;
+    --rojo: #fa2d2d;
+    --rojoPokemon: #e3350d;
+    --grisClaro: #acacac;
+    --grisClaro2: #e2e2e2;
+
+    --separacion: 5rem; /*1rem = 10px*/
+
+    /*FUENTES*/
+    --fuentePrincipal: 'Roboto', sans-serif;
+    /* --fuenteSecundaria: */
+    --fuenteH1: 'Philosopher', sans-serif;
+    --fuenteFooter: 'Libre Barcode 39 Text', sans-serif;
+    --sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --sombraBlanca: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+/*CONTENEDOR*/
+[class$="__contenedor"] {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+h1, h2, h3 {
+    font-weight: 700;
+    margin: calc(var(--separacion)/2) 0;
+}
+h1 {
+    font-size: 4.4rem;
+}
+h2 {
+    font-size: 3.6rem;
+}
+h3 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+hr{
+    width: 100%;
+    margin: 3rem 0 0 0;
+}   
+.activo {
+    color: var(--rojo);
+}
+
+/*UTILIDADES*/
+.text-center {
+    text-align: center;
+}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+.body {
+    background-image: url(/background-body.svg);
+}
+/*INICIO HEADER*/
+.header {
+    background-color: var(--primario);
+    padding: .5rem 0;
+    position: fixed;
+    top: 0;
+    /* CENTRA EL HEADER DESPUES DE APLICAR FIXED */
+    left: 0;
+    right: 0;
+}
+
+@media (min-width: 768px) {
+    .header {
+        background-color: var(--primario);
+        padding: var(--separacion) 0;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+}
+.header__logo {
+
+}
+
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media(min-width: 768px) {
+    .navegacion {
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 2rem;
+    }
+}
+#nav{
+    /* OCULAR HEADER EN MOVIL */
+    opacity: 0;
+    transform: translateY(-120%);
+    transition: all 500ms ease-out;
+}
+#nav[data-visible="true"]{
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (min-width: 768px){
+    #nav{
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
+    }
+}
+.navegacion__link {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.btn-mostrar-ocultar-menu{
+    float: right;
+}
+@media (min-width: 768px){
+    .btn-mostrar-ocultar-menu{
+        display: none;
+    }
+}
+/*FIN  HEADER*/
+
+/*INICIO MAIN*/
+.main {
+    margin-bottom: var(--separacion);
+    /* EVITA QUE EL MAIN QUEDE BAJO EL HEADER AL APLICAR FIXED */
+    margin-top: 15rem;
+}
+@media (min-width: 768px) {
+    .main {
+        
+    }
+}
+.main__grid {
+    height: auto;
+    background-color: var(--grisClaro2);
+    display: flex;
+    align-items: start;
+    border-radius: 10px;
+    padding: var(--separacion) 0;
+}
+.main__contenido {
+    line-height: 1.1;
+    height: 35rem;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    margin-bottom: 11.2rem;
+}
+@media (min-width: 768px) {
+    .main__contenido {
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+    }
+}
+.main__contenedor-foto-perfil {
+    height: 26.25rem;
+    width: 26.25rem;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(250, 45, 45, 0.5); /* Sombra alrededor del círculo */
+    margin: 0 auto;
+    background-color: var(--primario);
+    border: 1px solid var(--rojo);
+}
+@media (min-width: 768px){
+    .main__contenedor-foto-perfil {
+        
+    }
+}
+.main__contenedor-presentacion{
+    margin-top: 1.5rem;
+}
+@media (min-width: 768px){
+    .main__contenedor-presentacion{
+        display: flex;
+        flex-direction: column;
+    }
+}
+.main__presentacion {
+    margin: 0;
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: var(--blanco);
+}
+@media (min-width: 768px) {
+    .main__presentacion {
+        font-size: 2.8rem;
+    }
+}
+.main__heading {
+    font-family: var(--fuenteH1);
+    font-size: 3rem;
+    margin: 0;
+}
+@media (min-width: 768px) {
+    .main__heading {
+        font-size: 3.5rem;
+    }
+}
+.degradado {
+    color: transparent;
+    background: linear-gradient(to right, var(--blanco) 0%, var(--rojo) 100% );
+    /*DEFINE A QUE PARTE DEL ELEMENTO QUEREMOS AGREGARLE EL BACKGROUND*/
+    -webkit-background-clip: text;
+}
+.main__headingSpan {
+    font-size: 3.2rem;
+}
+
+@media (min-width: 768px) {
+    .main__headingSpan {
+        font-size: 3.7rem;
+    }
+}
+
+.main__profesion {
+    margin: 0;
+    color: var(--blanco);
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+@media (min-width: 768px){
+    .main__profesion {
+        font-size: 2.5rem;
+    } 
+}
+.main__profesionSpan {
+    color: var(--rojo);
+}
+.descargar-cv {
+    cursor: pointer;
+    background-color: var(--primario);
+    border: none;
+    border-radius: 20px;
+    padding: 1rem 3rem;
+    color: var(--blanco);
+    font-weight: 700;
+    box-shadow: var(--sombraBlanca);
+    margin-top: 1.5rem;
+    width: 100%;
+    border: 1px solid var(--blanco)
+}
+@media (min-width: 768px){
+    .descargar-cv {
+        margin: 1.5rem auto 0 auto;
+        max-width: 75%;
+    }
+}
+@media (min-width: 1024px){
+    .descargar-cv{
+        margin: 1.5rem 0 0 0;
+        max-width: 40%;
+    }
+}
+/* INICIO MAIN PROYECTOS */
+.body-proyectos{
+    background-color: var(--grisClaro2);
+}
+.proyectos{
+
+}
+.proyecto{
+    background-color: var(--blanco);
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    border-radius: 10px;
+    padding: 3rem 0 0;
+    box-shadow: var(--sombra);
+    margin-bottom: var(--separacion);
+}
+@media (min-width: 768px){
+    .proyecto{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.proyecto__informacion{
+    width: 90%;
+    margin: 0 auto; 
+    padding-bottom: 2rem;
+}
+.proyecto__texto {
+    margin: 0;
+    line-height: 1.3;
+}
+.proyecto__heading{
+    text-align: center;
+    margin: 0;
+    padding-bottom: 1.5rem;
+    line-height: 1.3;
+}
+.tecnologias__heading {
+   
+}
+.tecnologias__iconos {
+    text-align: center;
+    font-size: 2.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+.logo-tailwind{
+    width: 3.5rem;
+    display: inline;
+}
+.proyecto__imagen{
+    border: 1px solid var(--primario);
+    border-radius: 15px;
+    width: 90%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+/* FIN MAIN PROYECTOS */
+/*FIN MAIN*/
+
+/*INICIO PAGINA MAS*/
+.navegacion-apis {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+    background-color: #FFF;
+}
+@media (min-width: 768px) {
+    .navegacion-apis {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0;
+        width: 100%;
+    }
+}
+.navegacion-apis__link {
+    color: var(--secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    width: 100%;
+    border: 1px solid var(--secundario);
+}
+@media (min-width: 768px) {
+    .navegacion-apis__link {
+        flex-direction: column;
+        gap: .5rem;
+        width: 10rem;
+        border: none;
+    }
+}
+.navegacion-apis__link:first-child {
+    background-color: var(--rojoPokemon);
+    color: var(--blanco);
+    border: none;
+}
+.navegacion-apis__link--icono {
+    width: 3rem;
+    display: inline;
+}
+/*FIN PAGINA MAS*/
+
+/*INICIO API POKEMON*/
+.body-pokemon {
+    background-color: var(--secundario);
+}
+
+.header-pokemon {
+    background-color: var(--primario);
+    width: 100%;
+    height: 10rem;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    color: var(--blanco);
+}
+@media (min-width: 768px) {
+    .formulario {
+        align-items: start;
+    }
+}
+.formulario__busqueda {
+    display: flex;
+    align-items: end;
+    gap: 2rem;
+}
+.formulario__campo {
+    display: flex;
+    flex-direction: column;   
+}
+.formulario__label {
+    margin: .5rem 0;
+}
+.formulario__input {
+    border: 2px solid var(--secundario);
+    border-radius: 5px;
+}
+.main-pokemon__grid {
+    height: auto;
+    background-color: var(--blanco);
+    padding: var(--separacion) .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0 0 var(--separacion) 0;
+}
+.main-pokemon__logo {
+    margin: 0 auto;
+    width: 75%;
+    padding: 2.5rem 0;
+}
+@media (min-width: 768px) {
+    .main-pokemon__logo {
+
+    }
+}
+.botones-opciones {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: var(--separacion);
+    width: 75%;
+}
+@media (min-width: 768px) {
+    .botones-opciones {
+        flex-direction: row;
+        width: auto;
+        gap: 2rem;
+    }
+}
+.btn {
+    background-color: var(--grisClaro);
+    color: var(--blanco);
+    border: none;
+    border-radius: .3rem;
+    padding: .3rem 0;
+}
+@media (min-width: 768px) {
+    .btn {
+        width: 10rem;
+    }
+}
+.pokemons__container {
+    margin: 0 auto;
+}
+.pokemons__containerLista {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .pokemons__containerLista {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .pokemons__containerLista {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.pokemon__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--secundario);
+    border-radius: .5rem;
+}
+
+@media (min-width: 768px) {
+    .pokemon__card:nth-child(5) {
+        grid-column: 2/4;
+    }
+    .pokemon__card:nth-child(9) {
+        grid-column: 1/3;
+    }
+    .pokemon__card:nth-child(10) {
+        grid-column: 3/4;
+    }
+}
+
+@media (min-width: 1024px) {
+    .pokemon__card:nth-child(1) {
+        grid-column: 1/4;
+    }
+    .pokemon__card:nth-child(4) {
+        grid-column: 1/3;
+    }
+    .pokemon__card:nth-child(5) {
+        grid-column: 3/5;
+    }
+    .pokemon__card:nth-child(3) {
+        grid-column: 5/6;
+        grid-row: 1/3;
+    }
+    .pokemon__card:nth-child(7) {
+        grid-column: 2/5;
+    }
+    .pokemon__card:nth-child(8) {
+        grid-column: 5/6;
+    }
+    .pokemon__card:nth-child(10) {
+        grid-column: 3/6;
+    }
+}
+
+.pokemon__imagen {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon__imagen img {
+    height: 20rem;
+}
+
+.pokemon__nombre {
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.pokemon__imagenesBusqueda {
+    margin: 0 auto;
+    display: flex;
+}
+.pokemon__imagenesBusqueda img {
+    height: 10rem;
+}
+@media (min-width: 768px) {
+    .pokemon__imagenesBusqueda img {
+        height: 20rem;
+    }
+}
+/*FIN API POKEMON*/
+
+/*CONTACTO*/
+.body-contacto{
+    background-color: var(--grisClaro2);
+}
+.contacto {
+    margin-bottom: var(--separacion);
+}
+
+.contacto__contenido {
+    width: 20rem;
+    background-color: var(--secundario);
+    margin: 0 auto;
+    color: var(--blanco);
+    padding: 0.5rem 0 0;
+    border-radius: 5px;
+    border: 1px solid;
+    box-shadow: var(--sombraBlanca);
+}
+
+@media (min-width: 768px) {
+    .contacto__contenido {
+        width: 25rem;
+    }
+}
+
+.contacto__heading {
+    margin: 0;
+    font-size: 1.8rem;
+}
+@media (min-width: 768px)  {
+    .contacto__heading {
+        font-size: 2.5rem;
+    }
+}
+
+.informacion__1 {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 700;
+    padding: 1rem 0;
+}
+@media (min-width: 768px)  {
+    .informacion__1 {
+        font-size: 1.5rem;
+    }
+}
+
+.informacion__correo,
+.informacion__celular {
+    margin: 0;
+    padding: .3rem 0;
+}
+
+.informacion__celular a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.informacion__redesSociales {
+    font-size: 2.8rem;
+}
+@media (min-width: 768px)  {
+    .informacion__redesSociales {
+        font-size: 3.3rem;
+    }
+}
+/*FIN CONTACTO*/
+
+/*PAGINA CONTACTO*/
+.comentarios__grid {
+    display: grid;
+    background-color: var(--blanco);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+@media(min-width: 768px) {
+    .comentarios__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.comentarios {
+    width: 100%;
+    padding: 3rem 1rem;
+    margin: 0 auto;
+}
+@media(min-width: 768px) {
+    .comentarios {
+    
+    }
+}
+.comentarios__formulario {
+    display: flex;
+    flex-direction: column;
+}
+.comentarios__heading,
+.mostrar-comentarios__heading{
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+}
+.comentarios__campo {
+    display: flex;
+    flex-direction: column; 
+}
+.comentarios__label {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.comentarios__input {
+    border: none;
+    border-bottom: 1px solid var(--grisClaro);
+    background-color: var(--blanco);
+    margin-bottom: 2rem;
+}
+.comentarios__textarea {
+    border-radius: 15px;
+    border: none;
+    background-color: var(--grisClaro2);
+    resize: none;
+    padding: 1rem;
+    /*ELIMINA BARRA DE DESPLAZAMIENTO VERTICAL*/
+    overflow-y: hidden;
+}
+.comentarios__boton {
+    text-align: center;
+    margin-top: 3rem;
+}
+.error-mensaje__container {
+    margin-bottom: 3rem;
+}
+.error-mensaje {
+    width: 100%;
+    height: auto;
+    background-color: var(--rojo);
+    margin-bottom: .5rem;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--blanco);
+}
+.error-mensaje p {
+    margin: 3px 0;
+}
+.mostrar-comentarios{
+    background-color: var(--blanco);
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 3rem 1rem;
+    box-shadow: var(--sombra);
+}
+.contenedor-comentario {
+    background-color: var(--grisClaro2);
+    padding: 1rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px){
+    .contenedor-comentario {
+        width: 50%;
+    }
+}
+.comentario-nombre{
+    margin: 0 0 5px 0;
+}
+.comentario-contenido {
+    margin: 0;
+    line-height: 1.3;
+}
+/*FIN PAGINA CONTACTO*/
+
+/*FOOTER*/
+.footer {
+    padding: 3rem 0;
+    background-color: var(--primario);
+}
+
+.footer__parrafo {
+    font-family: var(--fuenteFooter);
+    color: var(--blanco);
+    font-size: 2rem;
+    margin: 0;
+}
+
