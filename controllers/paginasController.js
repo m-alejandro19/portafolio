@@ -34,7 +34,7 @@ const paginaContacto = async (req, res) => {
         //MOSTRANDO DATOS DE LA BD EN EL HTML
         htmlContent = htmlContent.replace('<!-- {{comentarios}} -->', comentarios.map(comentario => 
             `<div class="contenedor-comentario">
-                <h4 class="comentario-nombre">${comentario.nombre}${comentario.apellido}</h4>
+                <h4 class="comentario-nombre">${comentario.nombre} ${comentario.apellido}</h4>
                 <p class="comentario-contenido">${comentario.comentario}</p>
              </div>`).join(''));
 

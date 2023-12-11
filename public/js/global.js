@@ -12,9 +12,11 @@ const mostrarOcultarMenu = () => {
 
     if(visible === 'false'){
       barraNavegacion.setAttribute('data-visible', true);
+      btnMostrarOcularMenu.textContent = 'X'
       console.log('Todo bien');
     } else {
       barraNavegacion.setAttribute('data-visible', false);
+      btnMostrarOcularMenu.textContent = '='
     }
   })
 }
