@@ -80,22 +80,25 @@ hr{
 /*INICIO HEADER*/
 .header {
     background-color: var(--primario);
-    padding: .5rem 0;
+    padding: 0;
     position: fixed;
     top: 0;
     /* CENTRA EL HEADER DESPUES DE APLICAR FIXED */
     left: 0;
     right: 0;
+    height: 0;
 }
 
 @media (min-width: 768px) {
     .header {
-        background-color: var(--primario);
         padding: var(--separacion) 0;
         display: flex;
         align-items: center;
         width: 100%;
     }
+}
+.header__contenedor {
+    
 }
 .header__logo {
 
@@ -105,6 +108,7 @@ hr{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 7rem;
 }
 
 @media(min-width: 768px) {
@@ -112,6 +116,7 @@ hr{
         flex-direction: row;
         justify-content: center;
         column-gap: 2rem;
+        margin-top: 0;
     }
 }
 #nav{
@@ -134,9 +139,21 @@ hr{
 .navegacion__link {
     text-transform: uppercase;
     text-decoration: none;
+    background-color: var(--primario);
+    width: 100%;
+    padding-left: 3rem;
+    height: 7rem;
+}
+@media (min-width: 768px){
+    .navegacion__link {
+        width: auto;
+        height: auto;
+    }
 }
 .btn-mostrar-ocultar-menu{
-    float: right;
+    position: fixed;
+    top: 25px;
+    right: 20px;
 }
 @media (min-width: 768px){
     .btn-mostrar-ocultar-menu{

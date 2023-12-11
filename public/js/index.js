@@ -1,26 +1,8 @@
 const btnDescargarCV = document.querySelector('.descargar-cv');
 
-const btnMostrarOcularMenu = document.querySelector('.btn-mostrar-ocultar-menu');
-const barraNavegacion = document.querySelector('#nav');
-
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
   descargarCV();
-  mostrarOcultarMenu();
-}
-
-//OCULTA/MUESTRA LA BARRA DE NAVEGACION
-const mostrarOcultarMenu = () => {
-  btnMostrarOcularMenu.addEventListener('click', () =>{
-    const visible = barraNavegacion.getAttribute('data-visible');
-
-    if(visible === 'false'){
-      barraNavegacion.setAttribute('data-visible', true);
-      console.log('Todo bien');
-    } else {
-      barraNavegacion.setAttribute('data-visible', false);
-    }
-  })
-}
+})
 
 //FUNCION QUE DESCARGA EL CV
 const descargarCV = () => {
@@ -55,6 +37,3 @@ const descargarCV = () => {
     }
   );
 }
-
-
-

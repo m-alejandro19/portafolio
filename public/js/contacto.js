@@ -1,12 +1,12 @@
 const urlParams = new URLSearchParams(window.location.search);
 
-//SE LLAMAN LAS FUNCIONES AL CARGAR LA PAGINA
-//FUNCION ANONIMA
-window.onload = function() {
+//MANDA A LLAMAR LAS FUNCIONES CUANDO EL DOCUMENTO ESTE LISTO PARA SER MANIPULADO
+document.addEventListener('DOMContentLoaded', () => {
+    ajustarAlturaTxtArea();
     mostrarErrores();
     mantenerDatos();
-    ajustarAlturaTxtArea();
-};
+})
+
 
 //ALTURA TXTAREA AUT SEGUN CONTENIDO
 function ajustarAlturaTxtArea(){
