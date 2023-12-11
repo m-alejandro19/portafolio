@@ -107,7 +107,7 @@ hr{
     display: flex;
     flex-direction: column;
     margin-top: 7rem;
-    width: 90%;
+    width: 95%;
     /* MUEVE EL NAV A LA DERECHA */
     margin-left: auto;
     background-color: var(--primario);
@@ -145,21 +145,27 @@ hr{
     text-decoration: none;
     width: 100%;
     padding-left: 3rem;
-    height: 7rem;
+    padding: 2rem 0 2rem 3rem;
 }
 @media (min-width: 768px){
     .navegacion__link {
         width: auto;
-        height: auto;
+        padding: 0;
     }
 }
-.btn-mostrar-ocultar-menu{
+.enlace-mostrar-ocultar-menu{
     position: fixed;
     top: 25px;
     right: 20px;
+    font-size: 4.1rem;
+    color: var(--blanco);
+    font-weight: 500;
+}
+.enlace-negro{
+    color: var(--primario);
 }
 @media (min-width: 768px){
-    .btn-mostrar-ocultar-menu{
+    .enlace-mostrar-ocultar-menu{
         display: none;
     }
 }
