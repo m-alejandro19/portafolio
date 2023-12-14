@@ -703,17 +703,37 @@ hr{
 /*FIN CONTACTO*/
 
 /*PAGINA CONTACTO*/
-.comentarios__grid {
+.contacto__grid {
     display: grid;
     background-color: var(--blanco);
     border-radius: 10px;
     box-shadow: var(--sombra);
 }
 @media(min-width: 768px) {
-    .comentarios__grid {
+    .contacto__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+.contactame {
+    width: 100%;
+}
+.contactame__formulario {
+    display: flex;
+    flex-direction: column;
+}
+.contactame__campo {
+
+}
+.contactame__label {
+    display: block;
+}
+.contactame__input {
+
+}
+.contactame__textarea {
+
+}
+
 .comentarios {
     width: 100%;
     padding: 3rem 1rem;
