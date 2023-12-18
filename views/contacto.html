@@ -30,45 +30,64 @@
     <main class="main">
 
         <div class="main__contenedor">
+        </div>
              
              <div class="contacto__grid">
                 
                 <div class="contactame">
+                    <h3 class="contactame__heading">Envíame un email</h3>
                     <form action="" class="contactame__formulario">
-                        <div class="contactame__campo">
-                            <label for="nombre" class="contactame__label">Nombre</label>
-                            <input type="text" id="nombre" name="nombre-contactame" class="contactame__input">
-                        </div>
-                        <div class="contactame__campo">
-                            <label for="email" class="contactame__label">Email</label>
-                            <input type="email" id="email" name="email-contactame" class="contactame__input">
-                        </div>
-                        <div class="contactame__campo">
-                            <label for="mensaje" class="contactame__label">Mensaje</label>
-                            <textarea class="contactame__textarea" name="mensaje" id="mensaje" cols="30" rows="10" name="mensaje-contactame"></textarea>
+                        <div class="contactame__campos">
+                            <div class="contactame__campo">
+                                <label for="nombre" class="contactame__label">Nombre</label>
+                                <input type="text" id="nombre" name="nombre-contactame" class="contactame__input">
+                            </div>
+                            <div class="contactame__campo">
+                                <label for="email" class="contactame__label">Email</label>
+                                <input type="email" id="email" name="email-contactame" class="contactame__input">
+                            </div>
+                            <div class="contactame__campo">
+                                <label for="mensaje" class="contactame__label">Mensaje</label>
+                                <textarea class="contactame__textarea" name="mensaje" id="mensaje" cols="30" rows="10" name="mensaje-contactame"></textarea>
+                            </div>
                         </div>
                     </form>
+                    <div class="contactame__boton-contenedor">
+                        <button
+                            class="contactame__boton"    	
+                        >
+                            Enviar Email
+                        </button>
+                    </div>
                 </div>
 
                 <div class="comentarios">
 
                     <h3 class="comentarios__heading">Agrega un comentario</h3>
-                    <form action="/contacto" method="post" class="comentarios__formulario">
-                        <div class="comentarios__campo">
-                            <label for="nombre" class="comentarios__label">Nombre</label>
-                            <input id="nombre" type="text" class="comentarios__input" name="nombre">
-                        </div>
-                        <div class="comentarios__campo">
-                            <label for="apellido" class="comentarios__label">Apellido</label>
-                            <input id="apellido" type="text" class="comentarios__input" name="apellido">
-                        </div>
-                        <div class="comentarios__campo">
-                            <label for="comentario" class="comentarios__label">Comentario</label>
-                            <textarea class="comentarios__textarea" id="comentario" cols="30" rows="1" name="comentario"></textarea>
-                            <!-- <input id="comentario" type="text" class="comentarios__input" name="comentario"> -->
-                        </div>
-                        <input class="comentarios__boton btn" type="submit" value="Comentar">
-                    </form>
+                    <div class="comentarios-icono__boton-contenedor">
+                        <button class="comentarios-icono__boton"><img src="/icono-comentario.png" alt=""></button>
+                    </div>
+                    <div class="comentarios-modal">
+                        <span class="comentarios-modal-cerrar" id="cerrarModal">X</span>
+                        <form action="/contacto" method="post" class="comentarios__formulario">
+                            
+                                <div class="comentarios__campo">
+                                    <label for="nombre-comentario" class="comentarios__label">Nombre</label>
+                                    <input id="nombre-comentario" type="text" class="comentarios__input" name="nombre">
+                                </div>
+                                <div class="comentarios__campo">
+                                    <label for="apellido" class="comentarios__label">Apellido</label>
+                                    <input id="apellido" type="text" class="comentarios__input" name="apellido">
+                                </div>
+                                <div class="comentarios__campo">
+                                    <label for="comentario" class="comentarios__label">Comentario</label>
+                                    <textarea class="comentarios__textarea" id="comentario" cols="30" rows="1" name="comentario"></textarea>
+                                    <!-- <input id="comentario" type="text" class="comentarios__input" name="comentario"> -->
+                                </div>
+                            
+                            <input class="comentarios__boton btn" type="submit" value="Comentar">
+                        </form>
+                    </div>
                 </div>
                 
             </div>
@@ -80,9 +99,6 @@
                     <!-- {{comentarios}} -->
                 </div>
             </div>
-
-        </div>
- 
      </main>
 
 

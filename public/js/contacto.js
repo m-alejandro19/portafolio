@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ajustarAlturaTxtArea();
     mostrarErrores();
     mantenerDatos();
-})
+    mostrarModalComentarios();
+});
 
 
 //ALTURA TXTAREA AUT SEGUN CONTENIDO
@@ -14,8 +15,8 @@ function ajustarAlturaTxtArea(){
     txtAreaComentario.addEventListener('input', (e) => {
         e.target.style.height = 'auto'
         e.target.style.height = (e.target.scrollHeight) + 'px';
-    })
-}
+    });
+};
 
 //FUNCION QUE LEE LOS ERRORES DE LA URL QUE VIENEN DESDE EL CONTROLADOR comentarioController
 function mostrarErrores() {
@@ -57,6 +58,20 @@ function mantenerDatos() {
     document.getElementById('comentario').value = comentario || '';
     
 };
+
+function mostrarModalComentarios() {
+    const mostrarModalBtn = document.querySelector('.comentarios-icono__boton');
+    const comentariosModal = document.querySelector('.comentarios-modal');
+    const cerrarModalBtn = document.querySelector('.comentarios-modal-cerrar');
+
+    mostrarModalBtn.addEventListener('click', () => {
+        comentariosModal.style.display = 'block';
+    });
+
+    cerrarModalBtn.addEventListener('click', () => {
+        comentariosModal.style.display = 'none';
+    })
+}
 
 
 
