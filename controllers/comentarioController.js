@@ -21,7 +21,7 @@ const guardarComentario = async (req, res) => {
     //console.log(errores);
     if(errores.length > 0){
         // REDIRIGIR A LA VISTA CONTACTO CON LOS ERRORES DE VALIDACION EN LA URL 
-        res.redirect(`/contacto?errores=${encodeURIComponent(JSON.stringify(errores))}&nombre=${encodeURIComponent(nombre)}
+        res.redirect(`/proyectos?errores=${encodeURIComponent(JSON.stringify(errores))}&nombre=${encodeURIComponent(nombre)}
                                 &apellido=${encodeURIComponent(apellido)}&comentario=${encodeURIComponent(comentario)}`);
 
     } else {
@@ -33,7 +33,7 @@ const guardarComentario = async (req, res) => {
                 comentario
             });
             //REDIRIGE A PAGINA CONTACTO UNA VEZ SE HAYA GUARDADO LOS DATOS EN LA BD
-            res.redirect('/contacto');
+            res.redirect('/proyectos');
         } catch (error) {
             console.log(error);
         }

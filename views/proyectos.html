@@ -28,9 +28,7 @@
     </header>
 
     <main class="main">
-
         <div class="main__contenedor">
-             
              <div class="proyectos">
                 <h3 class="heading__proyectos">Proyectos</h3>
                 <div class="proyecto">
@@ -54,7 +52,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="proyecto">
                     <div class="proyecto__informacion">
                         <h4 class="proyecto__heading">Seguimiento Pacientes Clínica Dental</h4><a class="enlace-proyecto" href="https://citas-clinica-dental-react.netlify.app/" target="_blank"><ion-icon name="arrow-up-sharp"></ion-icon></a>
@@ -76,14 +73,51 @@
                         </div>
                     </div>
                 </div>
-                
-                
-
              </div>
         </div>
- 
      </main>
+     <section>
+        <div class="comentarios">
 
+            <h3 class="comentarios__heading">Agrega un comentario</h3>
+            <div class="comentarios-icono__boton-contenedor">
+                <button class="comentarios-icono__boton"><img src="/icono-comentario.png" alt=""></button>
+            </div>
+            <div class="comentarios-modal">
+                <a class="comentarios-modal-cerrar" id="cerrarModal"><</a>
+                    <form action="/contacto" method="post" class="comentarios__formulario">
+                        
+                            <div class="comentarios__campo">
+                                <label for="nombre-comentario" class="comentarios__label">Nombre</label>
+                                <input id="nombre-comentario" type="text" class="comentarios__input" name="nombre">
+                            </div>
+                            <div class="comentarios__campo">
+                                <label for="apellido" class="comentarios__label">Apellido</label>
+                                <input id="apellido" type="text" class="comentarios__input" name="apellido">
+                            </div>
+                            <div class="comentarios__campo">
+                                <!-- <label for="comentario" class="comentarios__label">Comentario</label> -->
+                                <div class="contenedor__caja-boton">
+                                    <textarea placeholder="Agrega un comentario..." class="comentarios__textarea" id="comentario" cols="30" rows="1" name="comentario"></textarea>
+                                    <input class="comentarios__boton btn" type="submit" value="Comentar">
+                                    <!-- <a href="#" class="comentarios__boton" ><ion-icon name="send-outline"></ion-icon></a> -->
+                                </div>
+                            </div>
+                    </form>
+                
+            </div>
+        </div>
+        
+    </div>
+    <!-- //ESTE CODIGO MUESTRA LOS DATOS DE LA BD EN LA VISTA -->
+    <div class="mostrar-comentarios"> 
+        <h3 class="mostrar-comentarios__heading">Comentarios</h3>
+        <div class=""> 
+            <!-- Marcador de posición para comentarios -->
+            <!-- {{comentarios}} -->
+        </div>
+    </div>
+     </section>
 
     <footer class="footer">
         <div class="footer__contenedor">
@@ -94,7 +128,7 @@
     <!-- IONICONS -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
+    <script src="/proyectos.js"></script>
     <script src="/global.js"></script>
 </body>
 </html>

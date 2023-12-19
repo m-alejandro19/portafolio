@@ -60,45 +60,6 @@
                         </button>
                     </div>
                 </div>
-
-                <div class="comentarios">
-
-                    <h3 class="comentarios__heading">Agrega un comentario</h3>
-                    <div class="comentarios-icono__boton-contenedor">
-                        <button class="comentarios-icono__boton"><img src="/icono-comentario.png" alt=""></button>
-                    </div>
-                    <div class="comentarios-modal">
-                        <span class="comentarios-modal-cerrar" id="cerrarModal">X</span>
-                        <form action="/contacto" method="post" class="comentarios__formulario">
-                            
-                                <div class="comentarios__campo">
-                                    <label for="nombre-comentario" class="comentarios__label">Nombre</label>
-                                    <input id="nombre-comentario" type="text" class="comentarios__input" name="nombre">
-                                </div>
-                                <div class="comentarios__campo">
-                                    <label for="apellido" class="comentarios__label">Apellido</label>
-                                    <input id="apellido" type="text" class="comentarios__input" name="apellido">
-                                </div>
-                                <div class="comentarios__campo">
-                                    <label for="comentario" class="comentarios__label">Comentario</label>
-                                    <textarea class="comentarios__textarea" id="comentario" cols="30" rows="1" name="comentario"></textarea>
-                                    <!-- <input id="comentario" type="text" class="comentarios__input" name="comentario"> -->
-                                </div>
-                            
-                            <input class="comentarios__boton btn" type="submit" value="Comentar">
-                        </form>
-                    </div>
-                </div>
-                
-            </div>
-            <!-- //ESTE CODIGO MUESTRA LOS DATOS DE LA BD EN LA VISTA -->
-            <div class="mostrar-comentarios"> 
-                <h3 class="mostrar-comentarios__heading">Comentarios</h3>
-                <div class=""> 
-                    <!-- Marcador de posición para comentarios -->
-                    <!-- {{comentarios}} -->
-                </div>
-            </div>
      </main>
 
 
@@ -112,7 +73,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
-    <script src="/contacto.js"></script>
     <script src="/global.js"></script>
 </body>
 </html>

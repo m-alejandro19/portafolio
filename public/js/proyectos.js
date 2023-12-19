@@ -31,7 +31,7 @@ function mostrarErrores() {
         erroresContainer.classList.add('error-mensaje__container');
         erroresContainer.innerHTML = erroresHTML;
         
-        const comentariosHeading = document.querySelector('.comentarios__heading');
+        const comentariosHeading = document.querySelector('.comentarios__formulario');
         comentariosHeading.parentNode.insertBefore(erroresContainer, comentariosHeading);  
 
         setTimeout(() => {
