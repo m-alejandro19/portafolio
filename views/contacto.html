@@ -16,7 +16,7 @@
 
     <header class="header">
         <div class="header__logo">
-            <img src="" alt="">
+            <a href="#" class="header__logo-negro"><ion-icon name="code-slash-outline"></ion-icon></a>
         </div>
         <nav class="navegacion" id="nav" data-visible="false">
             <a class="navegacion__link" href="index.html">Sobre Mi</a>
@@ -36,29 +36,30 @@
                 
                 <div class="contactame">
                     <h3 class="contactame__heading">Envíame un email</h3>
-                    <form action="" class="contactame__formulario">
+                    <form action="/contacto" method="post" class="contactame__formulario">
                         <div class="contactame__campos">
                             <div class="contactame__campo">
                                 <label for="nombre" class="contactame__label">Nombre</label>
-                                <input type="text" id="nombre" name="nombre-contactame" class="contactame__input">
+                                <input type="text" id="nombre" name="nombre" class="contactame__input">
                             </div>
                             <div class="contactame__campo">
                                 <label for="email" class="contactame__label">Email</label>
-                                <input type="email" id="email" name="email-contactame" class="contactame__input">
+                                <input type="email" id="email" name="email" class="contactame__input">
                             </div>
                             <div class="contactame__campo">
                                 <label for="mensaje" class="contactame__label">Mensaje</label>
                                 <textarea class="contactame__textarea" name="mensaje" id="mensaje" cols="30" rows="10" name="mensaje-contactame"></textarea>
                             </div>
                         </div>
+                        <div class="contactame__boton-contenedor">
+                            <button
+                                type="submit"
+                                class="contactame__boton"    	
+                            >
+                                Enviar Email
+                            </button>
+                        </div>
                     </form>
-                    <div class="contactame__boton-contenedor">
-                        <button
-                            class="contactame__boton"    	
-                        >
-                            Enviar Email
-                        </button>
-                    </div>
                 </div>
      </main>
 

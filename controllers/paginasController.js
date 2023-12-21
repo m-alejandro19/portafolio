@@ -8,7 +8,7 @@ const paginaSobreMi = (req, res) => {
     res.sendFile(path.resolve(__dirname, 'index.html'));
 };
 
-const paginaProyectos = async (req, res) => {
+const paginaMas = async (req, res) => {
 
     //MUESTRA LOS DATOS DE LA BD EN LA VISTA
     //CONSULTAR BASE DE DATOS
@@ -17,7 +17,7 @@ const paginaProyectos = async (req, res) => {
         const comentarios = await Comentario.findAll();
         
         //LEER EL CONTENIDO DEL ARCHIVO HTML
-        const htmlPath = path.resolve(__dirname, '..', 'views', 'proyectos.html');
+        const htmlPath = path.resolve(__dirname, '..', 'views', 'mas.html');
         let htmlContent = fs.readFileSync(htmlPath, 'utf8');
         //MOSTRANDO DATOS DE LA BD EN EL HTML
         htmlContent = htmlContent.replace('<!-- {{comentarios}} -->', comentarios.map(comentario => 
@@ -35,8 +35,8 @@ const paginaProyectos = async (req, res) => {
     }
 };
 
-const paginaMas = (req, res) => {
-    res.sendFile(path.resolve(__dirname, '..', 'views', 'mas.html'));
+const paginaProyectos = (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'views', 'proyectos.html'));
 };
 
 const paginaApiPokemon = (req, res) => {

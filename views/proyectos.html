@@ -16,7 +16,7 @@
 
     <header class="header">
         <div class="header__logo">
-            <img src="" alt="">
+            <a href="#" class="header__logo-negro"><ion-icon name="code-slash-outline"></ion-icon></a>
         </div>
         <nav class="navegacion" id="nav" data-visible="false">
             <a class="navegacion__link" href="index.html">Sobre Mi</a>
@@ -33,7 +33,7 @@
                 <h3 class="heading__proyectos">Proyectos</h3>
                 <div class="proyecto">
                     <div class="proyecto__informacion">
-                        <h4 class="proyecto__heading">Seguimiento Pacientes Clínica Dental</h4><a class="enlace-proyecto" href="https://citas-clinica-dental-react.netlify.app/" target="_blank"><ion-icon name="arrow-up-sharp"></ion-icon></a>
+                        <h4 class="proyecto__heading">Seguimiento Pacientes Clínica Dental</h4><a class="enlace-proyecto" href="https://citas-clinica-dental-react.netlify.app/" target="_blank"><img src="/arrow-up-outline.svg" alt=""></a>
                         <p class="proyecto__texto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta nostrum, possimus expedita, alias saepe suscipit dolores aperiam nam iure asperiores, cum odio? Commodi, neque! Inventore nihil recusandae esse a. Vero?</p>
                         <!-- <h4 class="tecnologias__heading">Tecnologías Usadas</h4> -->
                     </div>
@@ -43,18 +43,18 @@
                     <hr/>
                     <div class="logos__tecnologias">
                         <div class="logo-github">
-                            <ion-icon name="logo-github"></ion-icon>
+                            <img class="logo__tecnologia" src="../public/img/logo-github.svg" alt="logo-github">
                         </div>
                         <div class="logos-tech">
-                            <ion-icon name="logo-javascript"></ion-icon>
-                            <ion-icon name="logo-react"></ion-icon>
-                            <img class="logo-tailwind" src="../public/img/logo-tailwind.svg" alt="">
+                            <img class="logo__tecnologia" src="../public/img/logo-javascript.svg" alt="logo-js">
+                            <img class="logo__tecnologia" src="../public/img/logo-react.svg" alt="logo-react">
+                            <img class="logo__tecnologia" src="../public/img/logo-tailwind.svg" alt="logo-tailwind">
                         </div>
                     </div>
                 </div>
                 <div class="proyecto">
                     <div class="proyecto__informacion">
-                        <h4 class="proyecto__heading">Seguimiento Pacientes Clínica Dental</h4><a class="enlace-proyecto" href="https://citas-clinica-dental-react.netlify.app/" target="_blank"><ion-icon name="arrow-up-sharp"></ion-icon></a>
+                        <h4 class="proyecto__heading">Seguimiento Pacientes Clínica Dental</h4><a class="enlace-proyecto" href="https://citas-clinica-dental-react.netlify.app/" target="_blank"><img src="/arrow-up-outline.svg" alt=""></a>
                         <p class="proyecto__texto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta nostrum, possimus expedita, alias saepe suscipit dolores aperiam nam iure asperiores, cum odio? Commodi, neque! Inventore nihil recusandae esse a. Vero?</p>
                         <!-- <h4 class="tecnologias__heading">Tecnologías Usadas</h4> -->
                     </div>
@@ -64,61 +64,18 @@
                     <hr/>
                     <div class="logos__tecnologias">
                         <div class="logo-github">
-                            <ion-icon name="logo-github"></ion-icon>
+                            <img class="logo__tecnologia" src="../public/img/logo-github.svg" alt="logo-github">
                         </div>
                         <div class="logos-tech">
-                            <ion-icon name="logo-javascript"></ion-icon>
-                            <ion-icon name="logo-react"></ion-icon>
-                            <img class="logo-tailwind" src="../public/img/logo-tailwind.svg" alt="">
+                            <img class="logo__tecnologia" src="../public/img/logo-javascript.svg" alt="logo-js">
+                            <img class="logo__tecnologia" src="../public/img/logo-react.svg" alt="logo-react">
+                            <img class="logo__tecnologia" src="../public/img/logo-tailwind.svg" alt="logo-tailwind">
                         </div>
                     </div>
                 </div>
              </div>
         </div>
      </main>
-     <section>
-        <div class="comentarios">
-
-            <h3 class="comentarios__heading">Agrega un comentario</h3>
-            <div class="comentarios-icono__boton-contenedor">
-                <button class="comentarios-icono__boton"><img src="/icono-comentario.png" alt=""></button>
-            </div>
-            <div class="comentarios-modal">
-                <a class="comentarios-modal-cerrar" id="cerrarModal"><</a>
-                    <form action="/contacto" method="post" class="comentarios__formulario">
-                        
-                            <div class="comentarios__campo">
-                                <label for="nombre-comentario" class="comentarios__label">Nombre</label>
-                                <input id="nombre-comentario" type="text" class="comentarios__input" name="nombre">
-                            </div>
-                            <div class="comentarios__campo">
-                                <label for="apellido" class="comentarios__label">Apellido</label>
-                                <input id="apellido" type="text" class="comentarios__input" name="apellido">
-                            </div>
-                            <div class="comentarios__campo">
-                                <!-- <label for="comentario" class="comentarios__label">Comentario</label> -->
-                                <div class="contenedor__caja-boton">
-                                    <textarea placeholder="Agrega un comentario..." class="comentarios__textarea" id="comentario" cols="30" rows="1" name="comentario"></textarea>
-                                    <input class="comentarios__boton btn" type="submit" value="Comentar">
-                                    <!-- <a href="#" class="comentarios__boton" ><ion-icon name="send-outline"></ion-icon></a> -->
-                                </div>
-                            </div>
-                    </form>
-                
-            </div>
-        </div>
-        
-    </div>
-    <!-- //ESTE CODIGO MUESTRA LOS DATOS DE LA BD EN LA VISTA -->
-    <div class="mostrar-comentarios"> 
-        <h3 class="mostrar-comentarios__heading">Comentarios</h3>
-        <div class=""> 
-            <!-- Marcador de posición para comentarios -->
-            <!-- {{comentarios}} -->
-        </div>
-    </div>
-     </section>
-
     <footer class="footer">
         <div class="footer__contenedor">
             <p class="footer__parrafo text-center">alejandrobatres</p>
@@ -128,7 +85,6 @@
     <!-- IONICONS -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="/proyectos.js"></script>
     <script src="/global.js"></script>
 </body>
 </html>

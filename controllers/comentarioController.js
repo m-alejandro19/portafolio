@@ -17,11 +17,9 @@ const guardarComentario = async (req, res) => {
     if(comentario.trim() === ''){
         errores.push({mensaje: 'El comentario está vacío'});
     }
-    //console.log(req.body);
-    //console.log(errores);
     if(errores.length > 0){
-        // REDIRIGIR A LA VISTA CONTACTO CON LOS ERRORES DE VALIDACION EN LA URL 
-        res.redirect(`/proyectos?errores=${encodeURIComponent(JSON.stringify(errores))}&nombre=${encodeURIComponent(nombre)}
+        // REDIRIGIR A LA VISTA MAS CON LOS ERRORES DE VALIDACION EN LA URL 
+        res.redirect(`/mas?errores=${encodeURIComponent(JSON.stringify(errores))}&nombre=${encodeURIComponent(nombre)}
                                 &apellido=${encodeURIComponent(apellido)}&comentario=${encodeURIComponent(comentario)}`);
 
     } else {
@@ -33,7 +31,7 @@ const guardarComentario = async (req, res) => {
                 comentario
             });
             //REDIRIGE A PAGINA CONTACTO UNA VEZ SE HAYA GUARDADO LOS DATOS EN LA BD
-            res.redirect('/proyectos');
+            res.redirect('/mas');
         } catch (error) {
             console.log(error);
         }

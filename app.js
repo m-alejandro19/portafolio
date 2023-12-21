@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 
@@ -13,6 +15,9 @@ const {paginaSobreMi,
 //CONTROLADOR DE COMENTARIOS
 const {guardarComentario
 } = require('./controllers/comentarioController.js');
+
+//CONTROLADOR DE CORREOS
+const {enviarCorreo} = require('./controllers/correoController.js')
 
 //CONEXION A LA BD
 db.authenticate()
@@ -41,8 +46,10 @@ app.get('/mas', paginaMas);
 app.get('/consumo-apis/pokemon', paginaApiPokemon);
 app.get('/contacto', paginaContacto);
 
-//ENVIAR DATOS DESDE ESA PAGINA
-app.post('/contacto', guardarComentario);
+//ENVIAR DATOS DESDE PAGINA MAS
+app.post('/mas', guardarComentario);
+//ENVIAR DATOS DESDE PAGINA CONTACTO
+app.post('/contacto', enviarCorreo);
 
 app.listen(port, () => {
     console.log(`El Servidor esta corriendo en el puerto ${port}`);

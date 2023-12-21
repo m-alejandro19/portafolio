@@ -1,3 +1,5 @@
+const frmBusqueda = document.querySelector('.formulario__busqueda');
+
 //CONTAINER DONDE SE INSERTAN LOS POKEMONS
 const pokemonsContainer = document.querySelector('.pokemons__container');
 
@@ -9,27 +11,29 @@ pokemonContainerLista.classList.add('pokemons__containerLista');
 const pokemonContainerBusqueda = document.createElement('DIV');
 pokemonContainerBusqueda.classList.add('pokemons__containerBusqueda');
 
-//BOTON QUE INSERTA LOS POKEMONS EN EL CONTAINER
-const btnObtenerPokemons = document.querySelector('.btn-obtener-pokemons');
-
 //INPUT PARA BUSCAR EL POKEMON
 const pokemonInput = document.getElementById('nombre-numero');
 
 //BOTON PARA BUSCAR LOS POKEMONS POR ID O NOMBRE
 const btnBuscarPokemon = document.querySelector('.formulario__submit');
 
+//BOTON PARA LISTAR POKEMONS
+const btnListarPokemons = document.querySelector('.btn-obtener-pokemons');
+
 cargarEventListener();
 
 function cargarEventListener() {
-    btnObtenerPokemons.addEventListener('click', obtenerPokemons);
-    btnBuscarPokemon.addEventListener('click', buscarPokemons);    
+    frmBusqueda.addEventListener('submit', e => e.preventDefault());
+    document.addEventListener('DOMContentLoaded', obtenerPokemons);
+    btnBuscarPokemon.addEventListener('click', buscarPokemons);   
+    btnListarPokemons.addEventListener('click', obtenerPokemons) 
 };
 
 async function obtenerPokemons() {
 
     limpiarHTML();
 
-    const url = 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0';
+    const url = 'https://pokeapi.co/api/v2/pokemon?limit=12&offset=0';
 
     const respuesta = await fetch(url);
     const pokemons = await respuesta.json();
@@ -50,10 +54,15 @@ async function obtenerPokemons() {
             nombre: poke.name,
             imagen: poke.sprites.other.dream_world.front_default
         };
+        // console.log(pokemonObj.id);
 
         //console.log(pokemonObj.nombre);
         const cardPokemon = document.createElement('DIV');
-        cardPokemon.classList.add('pokemon__card')
+        cardPokemon.classList.add('pokemon__card');
+
+        const idPokemon = document.createElement('P');
+        idPokemon.classList.add('pokemon__id');
+        idPokemon.textContent = `Nº ${pokemonObj.id}`
         
         const nombrePokemon = document.createElement('P');
         nombrePokemon.classList.add('pokemon__nombre');
@@ -67,18 +76,19 @@ async function obtenerPokemons() {
         imagenPokemon.alt = `${pokemonObj.nombre}`;
         imagenContainer.appendChild(imagenPokemon);
 
+        cardPokemon.appendChild(idPokemon);
         cardPokemon.appendChild(nombrePokemon);
         cardPokemon.appendChild(imagenContainer);
 
-        pokemonContainerLista.appendChild(cardPokemon)
-
+        pokemonContainerLista.appendChild(cardPokemon);
+        
         pokemonsContainer.appendChild(pokemonContainerLista);
 
     });
 };
 
-async function buscarPokemons(e) {
-    e.preventDefault();
+async function buscarPokemons() {
+    // e.preventDefault();
 
     const nombreOId = pokemonInput.value.trim().toLowerCase();
     
@@ -87,7 +97,7 @@ async function buscarPokemons(e) {
         
         return;
     };
-
+    
     limpiarHTML();
 
     const url = `https://pokeapi.co/api/v2/pokemon/${nombreOId}`;
@@ -96,37 +106,37 @@ async function buscarPokemons(e) {
         const respuesta = await fetch(url);
         const pokemon = await respuesta.json();
 
-        //console.log(pokemon);
-
         const pokemonObj = {
             id: pokemon.id,
             nombre: pokemon.name,
-            imgFront: pokemon.sprites.front_default,
-            imgBack: pokemon.sprites.back_default
+            imagen: pokemon.sprites.other.dream_world.front_default
+            // imgFront: pokemon.sprites.front_default,
+            // imgBack: pokemon.sprites.back_default
         }; 
+
         //console.log(pokemonObj.imgBack);
         const cardPokemon = document.createElement('DIV');
-        cardPokemon.classList.add('pokemon__card');
+        cardPokemon.classList.add('pokemon__card', 'pokemon__card-busqueda');
+
+        const idPokemon = document.createElement('P');
+        idPokemon.classList.add('pokemon__id');
+        idPokemon.textContent = `Nº ${pokemonObj.id}`
 
         const nombrePokemon = document.createElement('P');
         nombrePokemon.classList.add('pokemon__nombre');
         nombrePokemon.textContent = `${pokemonObj.nombre}`;
 
-        const imagenesContainer = document.createElement('DIV');
-        imagenesContainer.classList.add('pokemon__imagenesBusqueda'); 
+        const imagenContainer = document.createElement('DIV');
+        imagenContainer.classList.add('pokemon__imagen');
 
-        const imagenFront = document.createElement('IMG');
-        imagenFront.src = pokemonObj.imgFront;
-        imagenFront.alt = pokemonObj.nombre;
-        imagenesContainer.appendChild(imagenFront);
+        const imagenPokemon = document.createElement('IMG');
+        imagenPokemon.src = pokemonObj.imagen;
+        imagenPokemon.alt = pokemonObj.nombre;
+        imagenContainer.appendChild(imagenPokemon);
 
-        const imagenBack = document.createElement('IMG');
-        imagenBack.src = pokemonObj.imgBack;
-        imagenBack.alt = pokemonObj.nombre;
-        imagenesContainer.appendChild(imagenBack);
-
+        cardPokemon.appendChild(idPokemon);
         cardPokemon.appendChild(nombrePokemon);
-        cardPokemon.appendChild(imagenesContainer);
+        cardPokemon.appendChild(imagenContainer);
 
         pokemonContainerBusqueda.appendChild(cardPokemon);
 
@@ -135,6 +145,8 @@ async function buscarPokemons(e) {
     } catch (error) {
         console.log(error);
     };
+
+    pokemonInput.value = '';
 };
 
 function limpiarHTML() {

@@ -11,17 +11,7 @@
 <body class="body-pokemon">
 
     <header class="header-pokemon">
-        <div class="header-pokemon__contenedor">
-            <div class="formulario">
-                <form class="formulario__busqueda" action="">
-                    <div class="formulario__campo">
-                        <label class="formulario__label" for="nombre-numero">Nombre o número</label>
-                        <input class="formulario__input" type="text" id="nombre-numero">
-                    </div>
-                    <input class="formulario__submit" type="submit" value="Buscar">
-                </form>
-            </div>
-        </div>
+        <button onclick="window.location.href='/mas'" class="btn-pagina-pokemon-atras" type="submit"><img src="/arrow-back-outline.svg" alt=""></button>
     </header>
 
     <main>
@@ -30,20 +20,31 @@
              <div class="main-pokemon__logo">
                 <img src="/pokemonlogo.svg" alt="logo pokemon">
              </div>
-             <div class="main-pokemon__grid">
-                <div class="botones-opciones">
-                    <button class="btn btn-obtener-pokemons">Lista</button>
-                    <button class="btn ">Boton 2</button>
-                    <button class="btn ">Boton 3</button>
+        </div>
+        <div class="contenedor-formulario__busqueda">
+            <form class="formulario__busqueda" action="">
+                <div class="formulario__campo">
+                    <label class="formulario__label" for="nombre-numero">Nombre o número</label>
+                    <input class="formulario__input" type="text" id="nombre-numero">
                 </div>
-                <!-- SOLO DEBE HABER UN CONTENEDOR PARA PODER LIMPIARLO FACILMENTE -->
-                 <div class="pokemons__container"></div>
-             </div>
-
+                <button class="formulario__submit" type="submit"><img src="/search-outline.svg" alt=""></button>
+            </form>
+            <div class="inf-busqueda-pokemon">
+                <p>Busca un Pokémon por su Nº o nombre.</p>
+            </div>
         </div>
  
      </main>
-
+     <section>
+        <div class="pokemons__grid">
+            <div class="botones-opciones">
+                <button class="btn-obtener-pokemons">Listar Pokémons</button>
+            </div>
+            <!-- SOLO DEBE HABER UN CONTENEDOR PARA PODER LIMPIARLO FACILMENTE -->
+             <div class="pokemons__container"></div>
+         </div>
+     </section>
+     <footer class="footer"></footer>
     <script src="/pokemon.js"></script>
 </body>
 </html>

@@ -12,11 +12,10 @@
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="body">
-
+<body class="body-mas">
     <header class="header">
         <div class="header__logo">
-            <img src="" alt="">
+            <a href="#" class="header__logo-negro"><ion-icon name="code-slash-outline"></ion-icon></a>
         </div>
         <nav class="navegacion" id="nav" data-visible="false">
             <a class="navegacion__link" href="index.html">Sobre Mi</a>
@@ -24,27 +23,51 @@
             <a class="navegacion__link activo" href="mas">Mas</a>
             <a class="navegacion__link" href="contacto">Contacto</a>
         </nav>
-    <a class="enlace-mostrar-ocultar-menu">=</a>
+    <a class="enlace-mostrar-ocultar-menu enlace-negro">=</a>
     </header>
-
     <main class="main">
-
-        <div class="main__contenedor">
-             
-             <div class="main__grid">
-                 <!-- <div class="pokemons__container"></div> -->
-                 <nav class="navegacion-apis">
-                    <a href="consumo-apis/pokemon" class="navegacion-apis__link">Pokédex <img class="navegacion-apis__link--icono" src="/pokeball.png" alt=""> </a>
-                    <a href="" class="navegacion-apis__link">API 2</a>
-                    <a href="" class="navegacion-apis__link">API 3</a>
-                </nav>
-             </div>
-
+            <div class="comentarios">
+                <h3 class="comentarios__heading">Agrega un comentario</h3>
+                <div>
+                    <form action="/mas" method="post" class="comentarios__formulario">
+                        <div class="comentarios__campo">
+                            <label for="nombre" class="comentarios__label">Nombre</label>
+                            <input id="nombre" type="text" class="comentarios__input" name="nombre">
+                        </div>
+                        <div class="comentarios__campo">
+                            <label for="apellido" class="comentarios__label">Apellido</label>
+                            <input id="apellido" type="text" class="comentarios__input" name="apellido">
+                        </div>
+                        <div class="comentarios__campo">
+                            <!-- <label for="comentario" class="comentarios__label">Comentario</label> -->
+                            <div class="contenedor__caja-boton">
+                                <textarea placeholder="Agrega un comentario..." class="comentarios__textarea" id="comentario" cols="30" rows="1" name="comentario"></textarea>
+                                <button class="comentarios__boton" type="submit"><ion-icon name="send-outline"></ion-icon></button>
+                            </div>
+                        </div>
+                </form>
+                </div>
+            </div> 
         </div>
- 
+        <!-- //ESTE CODIGO MUESTRA LOS DATOS DE LA BD EN LA VISTA -->
+        <div class="mostrar-comentarios"> 
+            <h3 class="mostrar-comentarios__heading">Comentarios</h3>
+            <div class=""> 
+                <!-- Marcador de posición para comentarios -->
+                <!-- {{comentarios}} -->
+            </div>
+        </div>
      </main>
-
-
+     <div class="main__contenedor">
+        <div class="main__grid">
+            <!-- <div class="pokemons__container"></div> -->
+            <nav class="navegacion-apis">
+               <a href="consumo-apis/pokemon" class="navegacion-apis__link">Pokédex <img class="navegacion-apis__link--icono" src="/pokeball.png" alt=""> </a>
+               <a href="" class="navegacion-apis__link">API 2</a>
+               <a href="" class="navegacion-apis__link">API 3</a>
+           </nav>
+        </div>
+    </div>
     <footer class="footer">
         <div class="footer__contenedor">
             <p class="footer__parrafo text-center">alejandrobatres</p>
@@ -54,7 +77,7 @@
     <!-- IONICONS -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
+    <script src="/mas.js"></script>
     <script src="/global.js"></script>
 </body>
 </html>

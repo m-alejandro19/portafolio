@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ajustarAlturaTxtArea();
     mostrarErrores();
     mantenerDatos();
-    mostrarModalComentarios();
 });
-
 
 //ALTURA TXTAREA AUT SEGUN CONTENIDO
 function ajustarAlturaTxtArea(){
@@ -31,8 +29,8 @@ function mostrarErrores() {
         erroresContainer.classList.add('error-mensaje__container');
         erroresContainer.innerHTML = erroresHTML;
         
-        const comentariosHeading = document.querySelector('.comentarios__formulario');
-        comentariosHeading.parentNode.insertBefore(erroresContainer, comentariosHeading);  
+        const comentariosFormulario = document.querySelector('.comentarios__formulario');
+        comentariosFormulario.parentNode.insertBefore(erroresContainer, comentariosFormulario);  
 
         setTimeout(() => {
             erroresContainer.remove();
@@ -59,19 +57,7 @@ function mantenerDatos() {
     
 };
 
-function mostrarModalComentarios() {
-    const mostrarModalBtn = document.querySelector('.comentarios-icono__boton');
-    const comentariosModal = document.querySelector('.comentarios-modal');
-    const cerrarModalBtn = document.querySelector('.comentarios-modal-cerrar');
 
-    mostrarModalBtn.addEventListener('click', () => {
-        comentariosModal.style.display = 'block';
-    });
-
-    cerrarModalBtn.addEventListener('click', () => {
-        comentariosModal.style.display = 'none';
-    })
-}
 
 
 
