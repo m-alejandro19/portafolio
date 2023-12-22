@@ -11,6 +11,10 @@ const Comentario = db.define('comentarios', {
     },
     comentario: {
         type: Sequelize.STRING
+    },
+    fechaComentario: {
+        type: Sequelize.DATE, 
+        defaultValue: Sequelize.NOW
     }
 });
 
