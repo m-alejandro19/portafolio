@@ -772,7 +772,7 @@ hr{
     .navegacion-apis {
         flex-direction: row;
         justify-content: center;
-        gap: 0;
+        gap: 3rem;
         width: 100%;
         background-color: #FFF;
     }
@@ -783,17 +783,17 @@ hr{
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    min-height: 5rem;
     padding: 1rem 0;
     width: 100%;
-    border: 1px solid var(--secundario);
     border-radius: 15px;
+    background-color: var(--grisClaro2);
 }
 @media (min-width: 768px) {
     .navegacion-apis__mas {
         flex-direction: column;
         gap: .5rem;
         width: 10rem;
-        border: none;
         font-size: 1.8rem;
     }
 }
@@ -801,6 +801,14 @@ hr{
     .navegacion-apis__mas {
         font-size: 2.2rem;
     }
+}
+.signo-interrogacion {
+    width: 8%;
+}
+@media (min-width: 768px) {
+    .signo-interrogacion {
+        width: 50%;
+    } 
 }
 .navegacion-apis__mas:first-child {
     background-color: var(--rojoPokemon);
