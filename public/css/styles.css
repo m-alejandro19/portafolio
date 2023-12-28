@@ -87,6 +87,7 @@ hr{
     left: 0;
     right: 0;
     height: 0;
+    z-index: 2;
 }
 @media (min-width: 768px) {
     .header {
@@ -406,6 +407,7 @@ hr{
     height: 40rem;
     width: 100%;
     background-color: var(--blanco);
+    z-index: 1;
 }
 /* INICIO MAIN PROYECTOS */
 .body-proyectos{

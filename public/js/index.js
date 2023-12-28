@@ -2,6 +2,7 @@ const btnDescargarCV = document.querySelector('.descargar-cv');
 
 document.addEventListener('DOMContentLoaded', () => {
   descargarCV();
+  openLayersMap();
 })
 
 //FUNCION QUE DESCARGA EL CV
@@ -38,16 +39,31 @@ const descargarCV = () => {
   );
 }
 
-// Configura el mapa
-const map = new ol.Map({
-  target: 'map', // El ID del elemento HTML donde se renderizará el mapa
-  layers: [
-    new ol.layer.Tile({
-      source: new ol.source.OSM() // Capa de OpenStreetMap
+const openLayersMap = () => {
+  // Configura el mapa
+  const map = new ol.Map({
+    target: 'map', // El ID del elemento HTML donde se renderizará el mapa
+    layers: [
+      new ol.layer.Tile({
+        source: new ol.source.OSM() // Capa de OpenStreetMap
+      })
+    ],
+    view: new ol.View({
+      center: [0, 0], // Coordenadas iniciales (longitud, latitud)
+      zoom: 2 // Nivel de zoom
     })
-  ],
-  view: new ol.View({
-    center: [0, 0], // Coordenadas iniciales (longitud, latitud)
-    zoom: 2 // Nivel de zoom
-  })
-});
+  });
+
+  
+  const latitud = '13.68935';
+  const longitud = '-89.18718';
+
+  const view = map.getView();
+
+  const coordenadasSV = ol.proj.fromLonLat([longitud, latitud]);
+
+  view.setCenter(coordenadasSV);
+  
+  view.setZoom(8);
+
+}
