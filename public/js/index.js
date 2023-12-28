@@ -37,3 +37,17 @@ const descargarCV = () => {
     }
   );
 }
+
+// Configura el mapa
+const map = new ol.Map({
+  target: 'map', // El ID del elemento HTML donde se renderizará el mapa
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.OSM() // Capa de OpenStreetMap
+    })
+  ],
+  view: new ol.View({
+    center: [0, 0], // Coordenadas iniciales (longitud, latitud)
+    zoom: 2 // Nivel de zoom
+  })
+});

@@ -402,6 +402,11 @@ hr{
         font-size: 2rem;
     }
 }
+#map {
+    height: 40rem;
+    width: 100%;
+    background-color: var(--blanco);
+}
 /* INICIO MAIN PROYECTOS */
 .body-proyectos{
     background-color: var(--grisClaro2);
