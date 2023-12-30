@@ -42,7 +42,7 @@ h1, h2, h3 {
     margin: calc(var(--separacion)/2) 0;
 }
 h1 {
-    font-size: 4.4rem;
+    font-size: 6rem;
 }
 h2 {
     font-size: 3.6rem;
@@ -403,11 +403,56 @@ hr{
         font-size: 2rem;
     }
 }
+.mapa {
+    background-color: var(--blanco);
+    padding-top: var(--separacion);
+}
+.mapa__heading {
+    width: 90%;
+    margin: 0 auto 2.5rem auto;
+
+}
+.mapa__nota {
+    padding-left: 1rem;
+}
+@media (min-width: 768px) {
+    .mapa__heading {
+        font-size: 3.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .mapa__heading {
+        font-size: 5.5rem;
+    }
+}
 #map {
     height: 40rem;
     width: 100%;
-    background-color: var(--blanco);
     z-index: 1;
+}
+.marcador {
+    background-color: var(--primario);
+    opacity: .7;
+    border: 2px solid #F6F6F6;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+/* Estilo para el punto central del marcador */
+.marcador::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F6F6F6;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
 }
 /* INICIO MAIN PROYECTOS */
 .body-proyectos{
@@ -501,15 +546,16 @@ hr{
     margin: 0;
     line-height: 1.3;
     padding-top: 1.5rem;
+    font-size: 1.6rem;
 }
 @media (min-width: 768px){
     .proyecto__texto {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
 }
 @media (min-width: 1024px){
     .proyecto__texto {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 }
 .logos__tecnologias {
@@ -1231,20 +1277,31 @@ hr{
         
     }
 }
+.sobre-mi__texto {
+    margin: 0;
+    font-size: 1.6rem;
+}
+@media (min-width: 768px) {
+    .sobre-mi__texto {
+        font-size: 2rem;
+    }
+}
+@media (min-width: 1024px) {
+    .sobre-mi__texto {
+        font-size: 2.5rem;
+    }
+}
 .sobre-mi__heading {
     margin: 0
 }
-@media (min-width: 1024px){
+@media (min-width: 768px) {
     .sobre-mi__heading {
-
+        font-size: 6.5rem;
     }
 }
-.sobre-mi__texto {
-    margin: 0;
-}
-@media (min-width: 1024px){
-    .sobre-mi__texto {
-
+@media (min-width: 1024px) {
+    .sobre-mi__heading {
+        font-size: 7rem;
     }
 }
 /* FIN SOBRE MI */

@@ -40,30 +40,32 @@ const descargarCV = () => {
 }
 
 const openLayersMap = () => {
-  // Configura el mapa
-  const map = new ol.Map({
-    target: 'map', // El ID del elemento HTML donde se renderizará el mapa
-    layers: [
-      new ol.layer.Tile({
-        source: new ol.source.OSM() // Capa de OpenStreetMap
-      })
-    ],
-    view: new ol.View({
-      center: [0, 0], // Coordenadas iniciales (longitud, latitud)
-      zoom: 2 // Nivel de zoom
-    })
+  
+  // Coordenadas del centro de San Salvador
+  const sanSalvadorCoordenadas = ol.proj.fromLonLat([-89.1889, 13.7126]);
+
+  const marcador = new ol.Overlay({
+    position: sanSalvadorCoordenadas,
+    element: document.getElementById('marcador'),
+    stopEvent: false
   });
 
-  
-  const latitud = '13.68935';
-  const longitud = '-89.18718';
+  // Crear un mapa
+  const map = new ol.Map({
+    target: 'map',
+    layers: [
+        new ol.layer.Tile({
+            source: new ol.source.OSM()
+        })
+    ],
+    view: new ol.View({
+        center: sanSalvadorCoordenadas,
+        zoom: 12
+    })
+});
 
-  const view = map.getView();
+// Añadir el marcador al mapa
+map.addOverlay(marcador);
 
-  const coordenadasSV = ol.proj.fromLonLat([longitud, latitud]);
-
-  view.setCenter(coordenadasSV);
-  
-  view.setZoom(8);
 
 }
