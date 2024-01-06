@@ -11,7 +11,7 @@ const descargarCV = () => {
     btnDescargarCV.addEventListener('click', async (e) => {
       e.preventDefault();
       
-      const url = '/public/pdfs/Voucher.pdf';
+      const url = '/public/pdfs/Alejandro-Batres-CV.pdf';
 
       try {
         const response = await fetch(url);
@@ -20,7 +20,7 @@ const descargarCV = () => {
         //ENLACE TEMPORAL PARA LA DESCARGA
         const enlaceDescarga = document.createElement('A');
         enlaceDescarga.href = URL.createObjectURL(blob);
-        enlaceDescarga.download = 'Voucher.pdf';
+        enlaceDescarga.download = 'Alejandro-Batres-CV.pdf';
         //enlaceDescarga.style.display = 'none';
 
         //AGREGA EL ENLACE AL CUERPO DEL DOCUMENTO

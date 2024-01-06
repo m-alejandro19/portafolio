@@ -619,14 +619,14 @@ hr{
         grid-column: 1/3;
     }
 }
-.imagen-tablet {
+.imagen-escritorio {
     display: none;
 }
-@media (min-width: 768px){
+@media (min-width: 1024px){
     .imagen-movil {
         display: none;
     }
-    .imagen-tablet {
+    .imagen-escritorio {
         display: block;
     }
 }
