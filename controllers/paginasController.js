@@ -27,10 +27,10 @@ const paginaMas = async (req, res) => {
     //MUESTRA LOS DATOS DE LA BD EN LA VISTA
     //CONSULTAR BASE DE DATOS
     try {
-        //findAll trae todos los resultados que hayan en la tabla
+        //findAll trae todos los resultados que hallan en la tabla
         const comentarios = await Comentario.findAll();
 
-        //INVIERTE EL ORDEN DE LOS COMENTARIOS INVIERTE EL ORDEN DE UN ARRAY
+        //INVIERTE EL ORDEN DE LOS COMENTARIOS 
         comentarios.reverse();
 
         //LEER EL CONTENIDO DEL ARCHIVO HTML
@@ -47,7 +47,6 @@ const paginaMas = async (req, res) => {
         //ENVIAR HTML AL CLIENTE
         res.send(htmlContent);
 
-        //res.sendFile(path.resolve(__dirname, '..', 'views', 'contacto.html'));
     } catch (error) {
         console.log(error);
     }

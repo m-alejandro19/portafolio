@@ -40,23 +40,17 @@ async function obtenerPokemons() {
     
     const {results} = pokemons;
 
-    //console.log(results);
-
     results.forEach( async (pokemon) => {
 
         const res = await fetch(pokemon.url);
         const poke = await res.json();
-
-        //console.log(poke);
 
         const pokemonObj = {
             id: poke.id,
             nombre: poke.name,
             imagen: poke.sprites.other.dream_world.front_default
         };
-        // console.log(pokemonObj.id);
 
-        //console.log(pokemonObj.nombre);
         const cardPokemon = document.createElement('DIV');
         cardPokemon.classList.add('pokemon__card');
 
@@ -88,7 +82,7 @@ async function obtenerPokemons() {
 };
 
 async function buscarPokemons() {
-    // e.preventDefault();
+    e.preventDefault();
 
     const nombreOId = pokemonInput.value.trim().toLowerCase();
     
@@ -110,11 +104,8 @@ async function buscarPokemons() {
             id: pokemon.id,
             nombre: pokemon.name,
             imagen: pokemon.sprites.other.dream_world.front_default
-            // imgFront: pokemon.sprites.front_default,
-            // imgBack: pokemon.sprites.back_default
         }; 
 
-        //console.log(pokemonObj.imgBack);
         const cardPokemon = document.createElement('DIV');
         cardPokemon.classList.add('pokemon__card', 'pokemon__card-busqueda');
 

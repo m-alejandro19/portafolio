@@ -29,7 +29,7 @@ const path = require('path');
 const port = process.env.PORT || 4000;
 
 //CONFIGURACION DEL MIDELWARE PARA SERVIR ARCHIVOS ESTATICOS
-//ARCHIVOS EN LA RAIZ (html)
+//ARCHIVOS EN LA RAIZ DEL PROYECTO
 app.use(express.static(__dirname));
 //CSS, IMAGENES Y JS
 app.use(express.static(path.join(__dirname, 'public', 'css')));
