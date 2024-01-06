@@ -2,7 +2,6 @@ const {Sequelize} = require('sequelize');
 const db = require('../config/db.js');
 
 const Comentario = db.define('comentarios', {
-    //EL ID NO ES NECESARIO, PORQUE EL ORM(SEQUELIZE) DA POR HECHO QUE ESE CAMPOS EXISTE
     nombre: {
         type: Sequelize.STRING
     },

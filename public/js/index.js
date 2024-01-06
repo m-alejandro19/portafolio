@@ -21,7 +21,6 @@ const descargarCV = () => {
         const enlaceDescarga = document.createElement('A');
         enlaceDescarga.href = URL.createObjectURL(blob);
         enlaceDescarga.download = 'Alejandro-Batres-CV.pdf';
-        //enlaceDescarga.style.display = 'none';
 
         //AGREGA EL ENLACE AL CUERPO DEL DOCUMENTO
         document.body.appendChild(enlaceDescarga);
@@ -50,7 +49,7 @@ const openLayersMap = () => {
     stopEvent: false
   });
 
-  // Crear un mapa
+  //CREA UN MAPA
   const map = new ol.Map({
     target: 'map',
     layers: [
@@ -64,8 +63,7 @@ const openLayersMap = () => {
     })
 });
 
-// Añadir el marcador al mapa
+// AÑADE MARCADOR AL MAPA
 map.addOverlay(marcador);
-
 
 }

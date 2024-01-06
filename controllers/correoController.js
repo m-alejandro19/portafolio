@@ -13,7 +13,7 @@ const enviarCorreo = async (req, res) => {
         }
     });
 
-    //SE OBTIENEN NOMBRE, EMAIL Y MENSAJE DEL FORMULARIO
+    //OBTIENE NOMBRE, EMAIL Y MENSAJE DEL FORMULARIO
     const {nombre, email, mensaje} = req.body;
 
     const errores = [];

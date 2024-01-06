@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mantenerDatos();
 });
 
-//ALTURA TXTAREA AUT SEGUN CONTENIDO
+//ALTURA TXTAREA AUTUMATICA SEGUN CONTENIDO
 function ajustarAlturaTxtArea(){
     const txtAreaComentario = document.querySelector('.comentarios__textarea');
     txtAreaComentario.addEventListener('input', (e) => {
@@ -19,14 +19,9 @@ function ajustarAlturaTxtArea(){
 };
 
 function mantenerDatos() {
-    //console.log('Desde mantener datos');
     const nombre = urlParams.get('nombre');
     const apellido = urlParams.get('apellido');
     const comentario = urlParams.get('comentario');
-
-    //AGREGABA ESPACIOS EN BLANCO AL CAMPO NOMBRE DESPUES DE NO PASAR LA VALIDACION
-    //POR ESE MOTIVO EL metodo trim()
-    //EN UN PRIMER MOMENTO EL CAMPO NOMBRE ESTARA NULL Y DARA UN ERROR EN LA CONSOLA DEL NAVEGADOR POR ESO EL IF
     const nombreInput = document.getElementById('nombre');
     if(nombre !== null){
         nombreInput.value = nombre.trim() || '';
